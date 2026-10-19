@@ -1,0 +1,22 @@
+[profile.default]
+src = "src"
+test = "test"
+script = "script"
+out = "out"
+libs = ["node_modules"]
+solc_version = "0.8.33"
+evm_version = "prague"
+optimizer = true
+optimizer_runs = 200
+ffi = true
+ast = true
+build_info = true
+extra_output = ["storageLayout"]
+fs_permissions = [{ access = "read", path = "out" }]
+
+[profile.default.fuzz]
+runs = 1000
+seed = "0x20261019"
+
+[fmt]
+line_length = 110

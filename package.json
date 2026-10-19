@@ -1,0 +1,18 @@
+{
+  "name": "web3sec-hw02-trip-fund",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ДЗ №2 Web3Sec: сбор на поездку и обновление V1 –> V2",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "setup": "npm ci",
+    "check": "forge fmt --check && forge build && forge test --force -vv",
+    "validate:upgrade": "forge clean && forge build && openzeppelin-upgrades-core validate out/build-info --contract src/TripFundV2.sol:TripFundV2 --reference src/TripFundV1.sol:TripFundV1 --requireReference"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "5.6.1",
+    "@openzeppelin/foundry-upgrades": "0.4.2",
+    "@openzeppelin/upgrades-core": "1.46.0",
+    "forge-std": "https://codeload.github.com/foundry-rs/forge-std/tar.gz/f3dae6e6ee381f25eb6a246f7da9b85c91a68219"
+  }
+}
